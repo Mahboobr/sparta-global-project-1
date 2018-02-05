@@ -12,6 +12,7 @@ body{
   /* height:80%; */
   margin: auto;
   border: solid 1px white;
+  position: relative;
 }
 
 /* #bricks{
@@ -41,3 +42,33 @@ body{
 	margin: 0px auto ;
   padding: 0px auto;
 }
+
+#paddle {
+  /* border: 1px solid white; */
+  position: absolute;
+  z-index: 10;
+  /* display: block; */
+  background: rgb(0,200,0);
+  border: 1px solid white;
+  margin-top: 460px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  /* padding: 30px; */
+  width: 95px;
+  height: 15px;
+}
+
+#ball{
+  margin-top: 440px;
+  margin-bottom: auto;
+  position: absolute;
+  background: rgb(255,255,255);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+ /* IF ball posX < boards right hand side and greater than left hand side, move the ball in one direction
+ If the ball's posX goes over/under these borders, reverse the direction
+ Same for the posY but only for the board's top
+ Use a boolean to determine the direction, so when posX > boardRight, direction = !direction */
