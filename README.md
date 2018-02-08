@@ -48,7 +48,7 @@ function RightAndUp() {
  Another issue was the collision detection. My solution involved knowing where each block was situated and where the position of the ball was. If they collided then the block would disappear. At this time, when the ball would collide, it would make the block disappear but when the ball rebounded it would run two direction functions at the same time making the ball move in a rough fashion. It would also still collide if no block was there.
 
 
- ![]./readme_images/Img1.png
+ ![](./readme_images/Img1.png)
 
  This images shows that the ball is still colliding with a block when there is none there.
 
