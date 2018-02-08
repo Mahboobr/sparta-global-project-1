@@ -551,7 +551,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return ($("#gameScreen").innerHeight() + $(id).outerHeight()*rowBelow - $("#bricks").outerHeight()) - ($("#ball").outerHeight()/2) +10*rowBelow
   }
   function UpperHeightLimit(id, CurrentRow) {
-    return ($("#gameScreen").innerHeight() + $(id).outerHeight()*CurrentRow - $("#bricks").outerHeight()) + ($("#ball").outerHeight()/2) +10*CurrentRow
+    return ($("#gameScreen").innerHeight() + $(id).outerHeight()*CurrentRow - $("#bricks").outerHeight()) + ($("#ball").outerHeight()/2) + 10*CurrentRow
   }
   function RightWidthLimit(id, CurrentCol, RightCol) {
     return ($("#gameScreen").innerWidth() - 4*CurrentCol) - $(id).outerWidth()*RightCol - 16

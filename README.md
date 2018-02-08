@@ -8,7 +8,10 @@ The brief for this project was to create a browser based game using all the tool
 
 ### How to download and play
 
-To download the game off GitHub, .....
+To download the game off GitHub, open the terminal and type:
+`git clone git@github.com:Mahboobr/sparta-global-project-1.git`
+Ensure it is in the correct directory before cloning.
+To open the game, open "index.html" in a browser.
 
 The aim of the game is to break all the blocks on screen. As the score gets higher, the speed of the ball increases too, increasing the difficulty as well.
 To play the game, the user presses the *left* and *right* arrow keys to move the paddle at the bottom of the screen.
@@ -41,3 +44,16 @@ function RightAndUp() {
 }
  ```
  The code above shows the array and the functions performed to dictate the direction. It shows that the X position of the ball was pushed into the array at the end. Then it would run the function RightAndUp which would increase the left and bottom margins of the ball.
+
+ Another issue was the collision detection. My solution involved knowing where each block was situated and where the position of the ball was. If they collided then the block would disappear. At this time, when the ball would collide, it would make the block disappear but when the ball rebounded it would run two direction functions at the same time making the ball move in a rough fashion. It would also still collide if no block was there.
+
+
+ !./readme_images/Img1.png
+
+ This images shows that the ball is still colliding with a block when there is none there.
+
+ _Sprint 2_
+
+Sprint 2 is where I found better ways to implement features of the game. I found a new way to make the ball move in all directions. This involved setting the speeds of the X and Y values within variables. This made it much simpler to reverse the sign and thus the direction. This also lead to it being much easier to
+Also working out where each block was positioned was made easier by using the widths of containing elements rather than hard-coding them.
+One big challenge I faced during this sprint was to make the code as "dry" as possible. However I managed to make some functions to reduce the amount of repetition but there are still areas where, with further work, it can be made less.
