@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         $("#ball").css("display","none");
         $(".hidden-col").css("display","none");
         $(".col").css("display","none");
+        ySpeed = 0;
       }
       if (lives == 2) {   //lose heart
         $("#heart3").css("display","none");
