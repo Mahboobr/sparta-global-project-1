@@ -1,8 +1,8 @@
 # sparta-global-project-1
 
-##Breakout
+## Breakout
 
-###Project Brief
+### Project Brief
 
 The brief for this project was to create a browser based game using all the tools that we had learnt over the previous two weeks. It needed to have instructions on how to play and show whether users won and their score.
 
