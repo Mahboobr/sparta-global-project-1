@@ -14,10 +14,31 @@ body{
   border: solid 1px white;
   position: relative;
 }
+.imgContainer{
+  background-color: rgb(15,15,15);
+  margin: 0 auto;
+  padding: 0 auto;
+  text-align: center;
+}
+.titleImg{
+  padding: auto;
+  width: 500px;
+}
 
-/* #bricks{
-  background-color: white;
-} */
+.scoreArea{
+  display: inline-block;
+  margin-top: 300px;
+  width: 90px;
+  height: 90px;
+  float: right;
+}
+
+.livesArea{
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  float: left;
+}
 .row {
 	display: block;
 }
@@ -35,7 +56,7 @@ body{
   padding-right: 0;
   padding-bottom: 0;
   width: 95px;
-  transition: .2s;
+  transition: .5s;
 }
 .hidden-col {
   background: none;
@@ -45,7 +66,7 @@ body{
 	margin-right: 4px;
   margin-left: 4px;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 0;
@@ -53,11 +74,11 @@ body{
   transition: .2s;
 }
 #bricks {
-  border: 1px solid white;
+  /* border: 1px solid white; */
 	display: block;
 	text-align: center;
-	margin: 0px  ;
-  padding: 0px ;
+	margin: 0px auto;
+  padding: 0px auto;
 }
 
 #paddle {

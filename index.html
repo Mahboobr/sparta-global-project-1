@@ -4,32 +4,41 @@
     <meta charset="utf-8">
     <title>Breakout</title>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <script src="jquery-3.3.1.js"></script>
-    <script src="app.js" charset="utf-8"></script>
+    <script src="./JQuery/jquery-3.3.1.js"></script>
+    <script src="./javascript/app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="./css/style.css">
 
   </head>
   <body>
-    <h3 id="Lives">Lives = 3</h3>
-    <h3 id="Score">Score = 0</h3>
+    <div class="imgContainer">
+      <img class="titleImg" src="Images/title.jpg" alt="">
+    </div>
+    <div class="livesArea">
+      <h3 id="Lives">Lives = 3</h3>
+    </div>
+    <div class="scoreArea">
+      <h3 id="Score">Score = 0</h3>
+    </div>
 
     <div id="gameScreen">  <!-- main div for game to work in -->
       <div id="bricks">
 
       </div>
       <div id="ball">
-        <!-- <h1>asdas</h1> -->
       </div>
       <div id="paddle">
-        <!-- <h1>sdasda</h1> -->
       </div>
+    </div>
+    <div class="instructions">
+      <h2>How to play the game</h2>
+      <p>
+        The objective of the game to break all the blocks.<br>
+        Click the ball to send the ball flying at the blocks. <br>
+        Use the Left and Right arrows to control the paddle at the bottom of the screen.<br>
+        Destroy all the blocks to win the round.
+      </p>
     </div>
   </body>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
   <!-- <script src="app.js" charset="utf-8"></script> -->
 </html>
-
-
-<!-- create a background div to work in  -->
-<!-- create the paddle in the bottom
-create blocks at top -->
