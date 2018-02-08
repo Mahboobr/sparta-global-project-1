@@ -1,17 +1,14 @@
 body{
   margin:55px;
   background-color: rgb(200, 0, 0) ;
-  /* black bacground for page */
 }
 
 #gameScreen{
   background-color: rgb(0, 50, 94) ;
   width:960px;
-  /* width:80%; */
   height:720px;
-  /* height:80%; */
   margin: auto;
-  border: solid 1px white;
+  border: solid 1px black;
   position: relative;
 }
 .imgContainer{
@@ -22,8 +19,7 @@ body{
 }
 .titleImg{
   padding: auto;
-  width: 400px;
-  height: 250px;
+  width: 600px;
 }
 
 .scoreArea{
@@ -50,7 +46,7 @@ body{
 
 .col {
   background: rgb(255,0,0);
-  border: 1px solid white;
+  border: 1px solid black;
   display: inline-block;
 	height: 30px;
 	margin-right: 4px;
@@ -79,7 +75,6 @@ body{
   transition: .2s;
 }
 #bricks {
-  /* border: 1px solid white; */
 	display: block;
 	text-align: center;
 	margin: 0px auto;
@@ -87,16 +82,13 @@ body{
 }
 
 #paddle {
-  /* border: 1px solid white; */
   position: absolute;
   z-index: 10;
-  /* display: block; */
   background: rgb(0,200,0);
-  border: 1px solid white;
+  border: 1px solid black;
   margin-top: 460px;
   margin-bottom: 10px;
   margin-left: 0px;
-  /* padding: 30px; */
   width: 95px;
   height: 15px;
 }
@@ -114,6 +106,7 @@ body{
 #win{
   width: 70%;
   z-index: 2;
+  padding-top: 60px;
   padding-left: 150px;
   display: none;
 }

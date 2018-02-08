@@ -1,24 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Get the modal
+
+  // Get modal
   var modal = document.getElementById('myModal');
 
-  // Get the button that opens the modal
+  // Get button that opens modal
   var btn = document.getElementById("myBtn");
 
-  // Get the <span> element that closes the modal
+  // Get <span> element that closes modal
   var span = document.getElementsByClassName("close")[0];
 
-  // When the user clicks on the button, open the modal
+  //open modal on click
   btn.onclick = function() {
       modal.style.display = "block";
   }
 
-  // When the user clicks on <span> (x), close the modal
+  // click x to close modal
   span.onclick = function() {
       modal.style.display = "none";
   }
 
-  // When the user clicks anywhere outside of the modal, close it
+  //click outside will close modal
   window.onclick = function(event) {
       if (event.target == modal) {
           modal.style.display = "none";
@@ -33,15 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var paddle = document.getElementById('paddle');
   var pos = 0;  //paddle pos
   var posSpeed = 2;
-
-  var posX = 10; // these two set where the ball starts
-  var posY = 40;
   var lives = 3;
   var score = 0;
 
   BrickLayout();
 
-  //BallControl();
   document.addEventListener("keydown", function(event) {
     if (event.which == 37) {
       var id = setInterval(MoveLeft, 3);
@@ -55,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   $("#ball").on("click", function() {
     var interval = setInterval(frame, 10);
-    var fastX = 2;
+    var fastX = 3;
     var fastY = 2;
     var xSpeed = fastX;
     var ySpeed = fastY;
@@ -72,27 +69,29 @@ document.addEventListener('DOMContentLoaded', function() {
         $("#Lives").html("Lives  " + lives);
       }
       posX+= xSpeed;
-      posY+= ySpeed;
+      posY+= ySpeed;    // speed of the x and y direction of ball
+
       $("#ball").css({
         "left": posX + "px",
         "bottom": posY + "px"
-      });
+      });               // change these margins to move ball around
+
       $("#Score").html("Score  " + score);
 
-      if (score == 45) {
+      if (score == 45) {      //win condition
         $("#win").css("display","inline-block");
         $("#paddle").css("display","none");
         $("#ball").css("display","none");
         $(".hidden-col").css("display","none");
         $(".col").css("display","none");
       }
-      if (lives == 2) {
+      if (lives == 2) {   //lose heart
         $("#heart3").css("display","none");
       }
       if (lives == 1) {
         $("#heart2").css("display","none");
       }
-      if (lives == 0) {
+      if (lives == 0) {   //lose condition
         $("#lose").css("display","inline-block");
         $("#paddle").css("display","none");
         $("#ball").css("display","none");
@@ -124,10 +123,10 @@ document.addEventListener('DOMContentLoaded', function() {
         && (posX <= RightWidthLimit("#id84", 1, 0))
         && (posX >= LeftWidthLimit("#id84", 1, 0))
         && $("#id84").hasClass( "col" )
-      ){    //if conditions for brick 84 ^^
+      ){
         RemoveBrick("id84"); // not a jquery id
         ReverseDirection();
-      }; // end of if for 84
+      };
       if ( (posY > LowerHeightLimit("#id74", 0))
         && (posY < UpperHeightLimit("#id74", 1))
         && (posX < RightWidthLimit("#id74", 3, 1))
@@ -208,10 +207,10 @@ document.addEventListener('DOMContentLoaded', function() {
         && (posX <= RightWidthLimit("#id83", 1, 0))
         && (posX >= LeftWidthLimit("#id83", 1, 0))
         && $("#id83").hasClass( "col" )
-      ){    //if conditions for brick 84 ^^
+      ){
         RemoveBrick("id83"); // not a jquery id
         ReverseDirection();
-      }; // end of if for 84
+      };
       if ( (posY > LowerHeightLimit("#id73", 1))
         && (posY < UpperHeightLimit("#id73", 2))
         && (posX < RightWidthLimit("#id73", 3, 1))
@@ -291,10 +290,10 @@ document.addEventListener('DOMContentLoaded', function() {
         && (posX <= RightWidthLimit("#id82", 1, 0))
         && (posX >= LeftWidthLimit("#id82", 1, 0))
         && $("#id82").hasClass( "col" )
-      ){    //if conditions for brick 84 ^^
+      ){
         RemoveBrick("id82"); // not a jquery id
         ReverseDirection();
-      }; // end of if for 84
+      };
       if ( (posY > LowerHeightLimit("#id72", 2))
         && (posY < UpperHeightLimit("#id72", 3))
         && (posX < RightWidthLimit("#id72", 3, 1))
@@ -374,10 +373,10 @@ document.addEventListener('DOMContentLoaded', function() {
         && (posX <= RightWidthLimit("#id81", 1, 0))
         && (posX >= LeftWidthLimit("#id81", 1, 0))
         && $("#id81").hasClass( "col" )
-      ){    //if conditions for brick 84 ^^
+      ){
         RemoveBrick("id81"); // not a jquery id
         ReverseDirection();
-      }; // end of if for 84
+      };
       if ( (posY > LowerHeightLimit("#id71", 3))
         && (posY < UpperHeightLimit("#id71", 4))
         && (posX < RightWidthLimit("#id71", 3, 1))
@@ -457,10 +456,10 @@ document.addEventListener('DOMContentLoaded', function() {
         && (posX <= RightWidthLimit("#id80", 1, 0))
         && (posX >= LeftWidthLimit("#id80", 1, 0))
         && $("#id80").hasClass( "col" )
-      ){    //if conditions for brick 84 ^^
+      ){
         RemoveBrick("id80"); // not a jquery id
         ReverseDirection();
-      }; // end of if for 84
+      };
       if ( (posY > LowerHeightLimit("#id70", 4))
         && (posY < UpperHeightLimit("#id70", 5))
         && (posX < RightWidthLimit("#id70", 3, 1))
@@ -534,17 +533,16 @@ document.addEventListener('DOMContentLoaded', function() {
         ReverseDirection();
       };
 
-
       function ReverseDirection() {
 
         if (ySpeed === fastY) {
           ySpeed = -fastY;
-
+          if (score == 5 || score == 10 || score == 15) {
+            fastY +=2;
+          }
         }else {
           ySpeed = fastY;
-          if (score == 5 || score == 10 || score == 15) {
-            fastY +=1;
-          }
+
         };
       }
     }; // end of frame function
