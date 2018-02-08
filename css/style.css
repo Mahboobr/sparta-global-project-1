@@ -4,7 +4,9 @@ body{
 }
 
 #gameScreen{
-  background-color: rgb(0, 50, 94) ;
+  /* background-color: rgb(0, 50, 94) ; */
+  background-image: url(../Images/background.jpeg);
+  background-size: 1300px;
   width:960px;
   height:720px;
   margin: auto;
@@ -61,13 +63,13 @@ body{
 }
 .hidden-col {
   background: none;
-  border: 1px solid rgb(0, 50, 94);
+  border: 1px solid rgba(28, 0, 93, 0.9);
   display: inline-block;
 	height: 30px;
 	margin-right: 4px;
   margin-left: 4px;
   margin-top: 5px;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 0;
