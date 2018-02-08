@@ -1,5 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Get the modal
+  var modal = document.getElementById('myModal');
 
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on the button, open the modal
+  btn.onclick = function() {
+      modal.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
 
 
   var bricks = document.getElementById('bricks');
@@ -8,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var ball = document.getElementById('ball');
   var paddle = document.getElementById('paddle');
   var pos = 0;  //paddle pos
+  var posSpeed = 2;
 
   var posX = 10; // these two set where the ball starts
   var posY = 40;
@@ -28,8 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-
-
   $("#ball").on("click", function() {
     var interval = setInterval(frame, 10);
     var fastX = 2;
@@ -41,11 +64,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
     function frame() {
       if ( posY < 0 ) {
         clearInterval(interval);
         lives--;
-        $("#Lives").html("Lives = " + lives);
+        $("#Lives").html("Lives  " + lives);
       }
       posX+= xSpeed;
       posY+= ySpeed;
@@ -53,7 +77,29 @@ document.addEventListener('DOMContentLoaded', function() {
         "left": posX + "px",
         "bottom": posY + "px"
       });
-      $("#Score").html("Score = " + score);
+      $("#Score").html("Score  " + score);
+
+      if (score == 45) {
+        $("#win").css("display","inline-block");
+        $("#paddle").css("display","none");
+        $("#ball").css("display","none");
+        $(".hidden-col").css("display","none");
+        $(".col").css("display","none");
+      }
+      if (lives == 2) {
+        $("#heart3").css("display","none");
+      }
+      if (lives == 1) {
+        $("#heart2").css("display","none");
+      }
+      if (lives == 0) {
+        $("#lose").css("display","inline-block");
+        $("#paddle").css("display","none");
+        $("#ball").css("display","none");
+        $(".hidden-col").css("display","none");
+        $(".col").css("display","none");
+        $("#heart1").css("display","none");
+      }
 
       // if the position of ball is greater than the width of the playing area go left
       if (posX > ($("#gameScreen").innerWidth() - $("#ball").outerWidth())) {  // width of ball is 20px set in css
@@ -490,17 +536,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
       function ReverseDirection() {
-        // if (score > 5 && score < 10) {
-        //   fastX +=2;
-        //   fastY +=2;
-        // }else if (score > 12 ) {
-        //   fastX +=4;
-        //   fastY +=4;
-        // }
+
         if (ySpeed === fastY) {
           ySpeed = -fastY;
+
         }else {
           ySpeed = fastY;
+          if (score == 5 || score == 10 || score == 15) {
+            fastY +=1;
+          }
         };
       }
     }; // end of frame function
@@ -542,13 +586,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   function MoveLeft() {
     if (pos > 0) {
-      pos-=2;
+      pos-= posSpeed;
       paddle.style.left = pos + 'px';
     }
   }
   function MoveRight() {
     if (pos < (960-96)) {
-      pos+=2;
+      pos+= posSpeed;
       paddle.style.left = pos + 'px';
     }
   }
