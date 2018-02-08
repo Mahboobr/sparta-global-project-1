@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Breakout</title>
+    <script src="./JQuery/jquery-3.3.1.js"></script>
+    <script src="./javascript/app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="./css/style.css">
+
+  </head>
+  <body>
+    <div class="imgContainer">
+      <img class="titleImg" src="Images/title.jpg" alt="">
+    </div>
+    <button id="myBtn">Instructions</button>
+
+    <div class="livesArea">
+      <h3 id="Lives">Lives <br>3</h3>
+      <img id="heart1" class="hearts" src="./Images/Heart.png" alt="">
+      <img id="heart2" class="hearts" src="./Images/Heart.png" alt="">
+      <img id="heart3" class="hearts" src="./Images/Heart.png" alt="">
+    </div>
+    <div class="scoreArea">
+      <h3 id="Score">Score <br> 0</h3>
+    </div>
+
+    <div id="gameScreen">  <!-- main div for game to work in -->
+      <img id="win" src="./Images/win.png" alt="">
+      <img id="lose" src="./Images/Fail.png" alt="">
+      <div id="bricks">
+
+      </div>
+      <div id="ball">
+      </div>
+      <div id="paddle">
+      </div>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>How to play the game</h2>
+        <p>
+          The objective of the game to break all the blocks.<br>
+          Click the ball to send the ball flying at the blocks. <br>
+          Use the Left and Right arrows to control the paddle at the bottom of the screen.<br>
+          Destroy all the blocks to win the round.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
