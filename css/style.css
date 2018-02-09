@@ -1,0 +1,170 @@
+body{
+  margin:55px;
+  background-color: rgb(200, 0, 0) ;
+}
+
+#gameScreen{
+  background-image: url(../Images/background.jpeg);
+  background-size: 1300px;
+  width:960px;
+  height:720px;
+  margin: auto;
+  border: solid 1px black;
+  position: relative;
+}
+.imgContainer{
+  background-color: rgb(15,15,15);
+  margin: 0 auto;
+  padding: 0 auto;
+  text-align: center;
+}
+.titleImg{
+  padding: auto;
+  width: 600px;
+}
+
+.scoreArea{
+  font-size: 30px;
+  display: inline-block;
+  margin-top: 250px;
+  width: 90px;
+  height: 90px;
+  float: right;
+}
+
+.livesArea{
+  font-size: 30px;
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  float: left;
+  margin-top: 250px;
+
+}
+.row {
+	display: block;
+}
+
+.col {
+  background: rgb(255,0,0);
+  border: 1px solid black;
+  display: inline-block;
+	height: 30px;
+	margin-right: 4px;
+  margin-left: 4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  width: 95px;
+  transition: .5s;
+}
+.hidden-col {
+  background: none;
+  border: 1px solid rgba(28, 0, 93, 0.9);
+  display: inline-block;
+	height: 30px;
+	margin-right: 4px;
+  margin-left: 4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  width: 95px;
+  transition: .2s;
+}
+#bricks {
+	display: block;
+	text-align: center;
+	margin: 0px auto;
+  padding: 0px auto;
+}
+
+#paddle {
+  position: absolute;
+  z-index: 10;
+  background: rgb(0,200,0);
+  border: 1px solid black;
+  margin-top: 460px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  width: 95px;
+  height: 15px;
+}
+
+#ball{
+  margin-top: 440px;
+  margin-bottom: auto;
+  position: absolute;
+  background: rgb(255,255,255);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+#win{
+  width: 70%;
+  z-index: 2;
+  padding-top: 60px;
+  padding-left: 150px;
+  display: none;
+}
+#lose{
+  width: 70%;
+  z-index: 2;
+  padding-top: 100px;
+  padding-left: 150px;
+  display: none;
+}
+.hearts{
+  width: 100px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: rgb(150,150,150);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: rgb(0,0,0);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#myBtn{
+  color: white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 40% ;
+  border-radius: 4px;
+  background-color: rgba(115,115,115,0.6);
+}
